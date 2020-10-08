@@ -47,16 +47,16 @@ namespace VectorLib.Lib
 
         public IMathVector MultipleNumber(double number)
         {
-            var pointsTmp = Calculations.MultiplyVecOnNumber(this.Points, number);
+            var points = Calculations.MultiplyVecOnNumber(this.Points, number);
 
-            return new MathVector(pointsTmp.ToArray());
+            return new MathVector(points.ToArray());
         }
 
-        public double Multiply(IMathVector vector)
+        public IMathVector Multiply(IMathVector vector)
         {
-            var multiplyResult = Calculations.DotProdOfVecs(this.Points, vector.Coordinates);
+            var points = Calculations.MultiplOfVecs(this.Points, vector.Coordinates);
 
-            return multiplyResult;
+            return new MathVector(points.ToArray());
         }
 
         public IMathVector Sum(IMathVector vector)
@@ -83,7 +83,7 @@ namespace VectorLib.Lib
             return vector.SumNumber(number);
         }
 
-        public static double operator *(MathVector vector_1, MathVector vector_2)
+        public static IMathVector operator *(MathVector vector_1, MathVector vector_2)
         {
             return vector_1.Multiply(vector_2);
         }
@@ -91,6 +91,17 @@ namespace VectorLib.Lib
         public static IMathVector operator *(MathVector vector, double number)
         {
             return vector.MultipleNumber(number);
+        }
+        public static IMathVector operator /(MathVector vector_1, MathVector vector_2)
+        {
+            var points = Calculations.DivOfVecs(vector_1.Coordinates, vector_2.Coordinates);
+
+            return new MathVector(points.ToArray());
+        }
+
+        public static IMathVector operator /(MathVector vector, double number)
+        {
+            return vector.MultipleNumber(1 / number);
         }
 
         public static IMathVector operator -(MathVector vector_1, MathVector vector_2)

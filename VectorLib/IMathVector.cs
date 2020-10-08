@@ -21,7 +21,7 @@ namespace VectorLib.Lib
 
         IMathVector Sum(IMathVector vector);
 
-        double Multiply(IMathVector vector);
+        IMathVector Multiply(IMathVector vector);
 
         double CalcDistance(IMathVector vector);
     }

@@ -64,6 +64,34 @@ namespace VectorLib.Lib.Maths
             return sum;
         }
 
+        public static List<double> MultiplOfVecs(List<double> points_1, List<double> points_2)
+        {
+            if (points_1.Count != points_2.Count)
+                throw new MathException("Failed to multiply the vectors");
+
+            List<double> coordinates = new List<double>();
+            for (int i = 0; i < points_1.Count; i++)
+            {
+                coordinates.Add(points_1[i] * points_2[i]);
+            }
+
+            return coordinates;
+        }
+
+        public static List<double> DivOfVecs(List<double> points_1, List<double> points_2)
+        {
+            if (points_1.Count != points_2.Count)
+                throw new MathException("Failed to multiply the vectors");
+
+            List<double> coordinates = new List<double>();
+            for (int i = 0; i < points_1.Count; i++)
+            {
+                coordinates.Add(points_1[i] / points_2[i]);
+            }
+
+            return coordinates;
+        }
+
         public static List<double> SumOfVecs(List<double> points_1, List<double> points_2)
         {
             if (points_1.Count != points_2.Count)
@@ -76,7 +104,6 @@ namespace VectorLib.Lib.Maths
             }
 
             return coordinates;
-
         }
     }
 }
