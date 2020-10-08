@@ -59,7 +59,7 @@ namespace VectorLib.Lib
             return multiplyResult;
         }
 
-        public IMathVector Sum(IMathVector vector) ///////////////
+        public IMathVector Sum(IMathVector vector)
         {
             var points = Calculations.SumOfVecs(this.Points, vector.Coordinates);
 
@@ -73,9 +73,9 @@ namespace VectorLib.Lib
             return new MathVector(pointsTmp.ToArray());
         }
 
-        IEnumerator IEnumerable.GetEnumerator() ///////////////
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return this.Points.GetEnumerator();
         }
     }
 }
