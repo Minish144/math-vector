@@ -72,6 +72,38 @@ namespace VectorLib.Lib
 
             return new MathVector(pointsTmp.ToArray());
         }
+         
+        public static IMathVector operator +(MathVector vector_1, MathVector vector_2)
+        {
+            return vector_1.Sum(vector_2);
+        }
+
+        public static IMathVector operator +(MathVector vector, double number)
+        {
+            return vector.SumNumber(number);
+        }
+
+        public static double operator *(MathVector vector_1, MathVector vector_2)
+        {
+            return vector_1.Multiply(vector_2);
+        }
+
+        public static IMathVector operator *(MathVector vector, double number)
+        {
+            return vector.MultipleNumber(number);
+        }
+
+        public static IMathVector operator -(MathVector vector_1, MathVector vector_2)
+        {
+            var negative_vector = vector_2.MultipleNumber(-1);
+
+            return vector_1.Sum(negative_vector);
+        }
+
+        public static IMathVector operator -(MathVector vector, double number)
+        {
+            return vector.SumNumber(-1 * number);
+        }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
