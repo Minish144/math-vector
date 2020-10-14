@@ -17,11 +17,13 @@ namespace VectorLib.Lib
 
         IMathVector SumNumber(double number);
 
-        IMathVector MultipleNumber(double number);
+        IMathVector MultiplyNumber(double number);
 
         IMathVector Sum(IMathVector vector);
 
         IMathVector Multiply(IMathVector vector);
+
+        double ScalarMultiply(IMathVector vector);
 
         double CalcDistance(IMathVector vector);
     }
