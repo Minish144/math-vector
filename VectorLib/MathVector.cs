@@ -8,7 +8,7 @@ using VectorLib.Lib.Maths;
 
 namespace VectorLib.Lib
 {
-    class MathVector : IMathVector
+    public class MathVector : IMathVector
     {
         private List<double> Points;
 
